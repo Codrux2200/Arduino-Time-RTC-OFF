@@ -7,7 +7,7 @@ void setup() {
    Serial.begin(9600);
    setTime(8, 27, 0, 14, 12, 2015);
    a = 0;
-   Serial.println("entrez la date actuelle sous le format 'H:M:S DD:MM:YYYY' :");
+   Serial.println("entrez la date actuelle sous le format 'HH:MM:SS DD:MM:YYYY' :");
 }
 
 void loop() {
