@@ -70,9 +70,9 @@ void settime(char* phrase, temps *temps, prog *prog)
       prog->index += 3;
    }
    temps->jour = (phrase[prog->index] - 48) * 10 + (phrase[prog->index + 1] - 48);
-   prog->index +=3;
+   prog->index += 3;
    temps->mois = (phrase[prog->index] - 48) * 10 + (phrase[prog->index + 1] - 48);
-   prog->index+=3;
+   prog->index += 3;
    temps->annee = (phrase[prog->index] - 48) * 1000 + (phrase[prog->index + 1] - 48) * 100 + 
    (phrase[prog->index + 2] - 48) * 10 + (phrase[prog->index + 3] - 48); 
 }
