@@ -43,7 +43,7 @@ void loop()
          Serial.println(year());
       }
    }  
-  delay(1000);
+   delay(1000);
 }
 
 void settime(char* phrase, temps *temps, prog *prog)
