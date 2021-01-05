@@ -89,4 +89,4 @@ void print2digits(int number)
   Serial.print(number);
 }
 
-// Copyright Saad Berrada Epitech 2020
+// Copyright Saad Berrada Epitech
