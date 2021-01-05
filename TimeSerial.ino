@@ -3,27 +3,29 @@
 int a = 0;
 bool valide = true;
 
-void setup() {
+void setup() 
+{
    Serial.begin(9600);
    setTime(8, 27, 0, 14, 12, 2015);
    a = 0;
    Serial.println("entrez la date actuelle sous le format 'HH:MM:SS DD:MM:YYYY' :");
 }
 
-void loop() {
+void loop() 
+{
    temps temps;
    prog prog;
    
-   while (Serial.available() > 0 ){
+   while (Serial.available() > 0) {
          prog.jeux = Serial.read();
          prog.phrase[a] = prog.jeux;
          a++;
    }
-   if (a != 0){
+   if (a != 0) {
       temps.annee = 0;
       settime(prog.phrase, &temps, &prog);
-      if (temps.annee != 0){
-         if (valide == true){
+      if (temps.annee != 0) {
+         if (valide == true) {
             setTime(temps.heure, temps.minu, temps.seconde, temps.jour, temps.mois, temps.annee);
             valide = false;
          }
@@ -46,21 +48,21 @@ void loop() {
 
 void settime(char* phrase, temps *temps, prog *prog)
 {
-   if (phrase[1] == ':'){
+   if (phrase[1] == ':') {
       temps->heure = phrase[0] - 48 ;
       prog->index = 2;        
    } else {
       temps->heure = (phrase[0] - 48) * 10 + (phrase[1] - 48);
       prog->index = 3;
    }
-   if (phrase[prog->index + 1] == ':'){
+   if (phrase[prog->index + 1] == ':') {
       temps->minu = phrase[prog->index] - 48;
       prog->index += 2;
    } else {
       temps->minu = (phrase[prog->index] - 48) * 10 + (phrase[prog->index + 1] - 48);
       prog->index += 3;
    }
-   if (phrase[prog->index + 1] == ':'){
+   if (phrase[prog->index + 1] == ':') {
       temps->seconde = phrase[prog->index] - 48;
       prog->index += 2; 
    } else {
