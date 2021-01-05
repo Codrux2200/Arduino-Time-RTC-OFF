@@ -15,5 +15,5 @@ struct prog{
    char phrase[256];
 };
 
-void settemps(char* phrase);
+void settime(char* phrase, temps *temps, prog *prog);
 void print2digits(int number);
